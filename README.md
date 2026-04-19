@@ -98,6 +98,11 @@ Both services run with:
 java -jar app.jar
 ```
 
+
+<img width="2879" height="1643" alt="image" src="https://github.com/user-attachments/assets/6c4ed09f-d746-4ff6-bb0a-8ea79c876364" />
+<img width="2879" height="1624" alt="image" src="https://github.com/user-attachments/assets/7914c52b-87d3-448a-a4c4-c669daeee2f5" />
+
+
 ## Docker Compose
 
 `docker-compose.yml` includes:
@@ -105,6 +110,8 @@ java -jar app.jar
 - RabbitMQ Management (ports `5672` and `15672`)
 - Producer (`sergiobejarano/producer-service`)
 - Consumer (`sergiobejarano/consumer-service`)
+
+<img width="2879" height="1627" alt="image" src="https://github.com/user-attachments/assets/ded04208-f52f-4882-830a-617a319e69ab" />
 
 ## Docker Hub Publishing
 
@@ -115,7 +122,7 @@ Published images:
 
 ## How to Run
 
-### Option 1: Start with Docker Compose
+### Start with Docker Compose
 
 With Docker Compose V1:
 
@@ -131,17 +138,18 @@ docker compose up -d
 docker compose ps
 ```
 
-### Option 2: Test Message Publishing
+### Test Message Publishing
 
 ```bash
-curl -X POST "http://localhost:8080/api/messages/send?message=HelloWorld"
+curl -X POST "http://localhost:8080/api/messages/send?message=HolaDesdeKillercoda"
 ```
 
 Expected response (current implementation text):
 
 ```text
-Mensaje 'HelloWorld' enviado!
+Mensaje 'HolaDesdeKillercoda' enviado!
 ```
+<img width="2879" height="1295" alt="image" src="https://github.com/user-attachments/assets/39338654-d7a2-4f99-9d2f-2f0b5f2c47d6" />
 
 Check consumer logs:
 
@@ -154,9 +162,10 @@ docker compose logs consumer
 Expected output (similar, current implementation text):
 
 ```text
-Mensaje recibido: 'HelloWorld'
->>> Mensaje Procesado: HelloWorld
+Mensaje recibido: 'HolaDesdeKillercoda'
+>>> Mensaje Procesado: HolaDesdeKillercoda
 ```
+<img width="2879" height="1233" alt="image" src="https://github.com/user-attachments/assets/6965b67d-1e43-4f39-90b4-dcbc3250bc67" />
 
 ## RabbitMQ UI
 
@@ -164,7 +173,15 @@ Mensaje recibido: 'HelloWorld'
 - Username: `guest`
 - Password: `guest`
 
-In the `Queues` tab you can inspect `messages.queue`.
+In the `Queues` tab we can inspect `messages.queue`.
+
+
+From killercoda:
+
+<img width="2879" height="1533" alt="image" src="https://github.com/user-attachments/assets/2369164d-d02e-412d-adb1-777bfa8a4579" />
+
+<img width="2879" height="1613" alt="image" src="https://github.com/user-attachments/assets/e9638a14-ba2e-4efa-b0bc-95759897be6f" />
+
 
 ## Local Build (Maven)
 
